@@ -8,10 +8,11 @@ const purple = (v) => `\u001b[35m${v}\u001b[0m`;
 //--------- Console Colorlization ---------
 
 const filePath = './target.sh';
+const tempshName = 'temporary.sh';
 
 function main() {
-    
-    console.log(purple('[1/1] Reading target file...'));
+
+    console.log(purple('[1/2] Reading target file...'));
 
     // If "target.sh" is not provided...
     if(!existsSync(filePath)) {
@@ -21,8 +22,12 @@ function main() {
     }
     
     const data = readFileSync(filePath).toString();
-    console.log(data);
+    
+    console.log(purple('[2/2] Converting Lines...'));
+    const dataLines = data.split("\n");
+    const commandLikeLines = dataLines.map(v => v.replace(/(.*)/, `echo "$1" >> ${tempshName}`));
 
+    console.log(commandLikeLines);
 }
 
 main();
