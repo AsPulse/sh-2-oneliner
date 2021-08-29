@@ -25,7 +25,7 @@ function main() {
     
     console.log(purple('[2/3] Converting Lines...'));
     const dataLines = data.split("\n");
-    const commandLikeLines = dataLines.map(v => v.replace(/(.*)/, `echo "$1" >> ${tempshName}`));
+    const commandLikeLines = dataLines.map((v, i) => v.replace(/(.*)/, `echo "$1" ${i == 0 ? '>' : '>>'} ${tempshName}`));
     
     console.log(purple('[3/3] Output for the oneliner...'));
 
