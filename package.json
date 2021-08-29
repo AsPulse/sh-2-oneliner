@@ -5,8 +5,5 @@
   "main": "index.js",
   "repository": "https://github.com/AsPulse/sh-2-oneliner.git",
   "author": "AsPulse <aspulse.x@gmail.com>",
-  "license": "MIT",
-  "scripts": {
-    "start": "node index.js"
-  }
+  "license": "MIT"
 }

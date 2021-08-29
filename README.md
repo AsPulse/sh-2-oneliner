@@ -15,7 +15,7 @@ yarn
 1. Place the shell script file you want to convert in the same directory as `index.js` as `target.sh`.
 2. Run the following command.
     ```bash
-    yarn start
+    node index.js
     ```
 3. The one-liner will be output to the console.
 ---
@@ -28,7 +28,7 @@ yarn
 1. `index.js` と同じ階層に、変換したいシェルスクリプトのファイルを `target.sh` として配置します。
 2. 下記のコマンドを実行します。
     ```bash
-    yarn start
+    node index.js
     ```
 3.  コンソールにワンライナーが出力されます。
 ---
