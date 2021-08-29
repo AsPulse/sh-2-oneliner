@@ -1,0 +1,12 @@
+{
+  "name": "sh-2-oneliner",
+  "version": "1.0.0",
+  "description": "Forcefully convert a shell script into a one-liner.",
+  "main": "index.js",
+  "repository": "https://github.com/AsPulse/sh-2-oneliner.git",
+  "author": "AsPulse <aspulse.x@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  }
+}
