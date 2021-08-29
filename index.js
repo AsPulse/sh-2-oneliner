@@ -12,7 +12,7 @@ const tempshName = 'temporary.sh';
 
 function main() {
 
-    console.log(purple('[1/2] Reading target file...'));
+    console.log(purple('[1/3] Reading target file...'));
 
     // If "target.sh" is not provided...
     if(!existsSync(filePath)) {
@@ -23,11 +23,22 @@ function main() {
     
     const data = readFileSync(filePath).toString();
     
-    console.log(purple('[2/2] Converting Lines...'));
+    console.log(purple('[2/3] Converting Lines...'));
     const dataLines = data.split("\n");
     const commandLikeLines = dataLines.map(v => v.replace(/(.*)/, `echo "$1" >> ${tempshName}`));
+    
+    console.log(purple('[3/3] Output for the oneliner...'));
 
-    console.log(commandLikeLines);
+    commandLikeLines.push(`sh ${tempshName}`);
+    commandLikeLines.push(`rm ${tempshName}`);
+
+    const result = commandLikeLines.join(' && ');
+
+    console.log(purple('--------'));
+    console.log(purple('Completed! Here is:'));
+    console.log(result);
+    console.log(purple('--------'));
+
 }
 
 main();
