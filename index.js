@@ -27,8 +27,10 @@ function main() {
     const dataLines = data.split("\n");
     const commandLikeLines = dataLines
         .map(v => v.replace(/"/g, '\\"'))
+        .map(v => v.replace(/\\n/g, '\\\\\\n'))    
         .map((v, i) => v.replace(/(.*)/, `echo "$1" ${i == 0 ? '>' : '>>'} ${tempshName}`));
-    
+    console.log(commandLikeLines);
+
     console.log(purple('[3/3] Output for the oneliner...'));
 
     commandLikeLines.push(`sh ${tempshName}`);
